@@ -1,0 +1,978 @@
+[
+  {
+    "id": "1",
+    "category": "Architecture",
+    "topic": "Attention Mechanism",
+    "difficulty": "Lead",
+    "text": "Explain the computational complexity of Self-Attention with respect to sequence length. How does FlashAttention optimize this?"
+  },
+  {
+    "id": "2",
+    "category": "Architecture",
+    "topic": "KV Cache",
+    "difficulty": "Senior",
+    "text": "What is the KV Cache in transformer inference? Calculate the memory impact for a 7B model with a 32k context window."
+  },
+  {
+    "id": "3",
+    "category": "RAG",
+    "topic": "Hybrid Search",
+    "difficulty": "Senior",
+    "text": "Compare Dense Retrieval vs. Sparse Retrieval (BM25). When would you use a Hybrid approach and how do you normalize scores?"
+  },
+  {
+    "id": "4",
+    "category": "Agents",
+    "topic": "ReAct Pattern",
+    "difficulty": "Senior",
+    "text": "Walk through the ReAct (Reason + Act) loop. How does the model determine when to stop reasoning and provide a final answer?"
+  },
+  {
+    "id": "5",
+    "category": "Production",
+    "topic": "Continuous Batching",
+    "difficulty": "Lead",
+    "text": "What is Continuous Batching in vLLM? How does it differ from static batching and why is it crucial for throughput?"
+  },
+  {
+    "id": "6",
+    "category": "RAG",
+    "topic": "Advanced Chunking",
+    "difficulty": "Senior",
+    "text": "Describe \"Parent Document Retrieval\" or \"Small-to-Big\" chunking. What problem does this solve regarding semantic context loss?"
+  },
+  {
+    "id": "7",
+    "category": "RAG",
+    "topic": "real-time streaming data",
+    "difficulty": "Senior",
+    "text": "How would you architect RAG for real-time streaming data (e.g., logs, stock feeds)?"
+  },
+  {
+    "id": "8",
+    "category": "RAG",
+    "topic": "RAG multi tenant",
+    "difficulty": "Lead",
+    "text": "Design a multi-tenant production RAG system supporting millions of documents with strict latency (<1s)."
+  },
+
+  {
+    "id": "9",
+    "category": "RAG",
+    "topic": "Hallucination Mitigation",
+    "difficulty": "Lead",
+    "text": "How would you detect and reduce hallucinations in a production RAG system without retraining the base model?"
+  },
+  {
+    "id": "10",
+    "category": "RAG",
+    "topic": "Query Rewriting",
+    "difficulty": "Senior",
+    "text": "Explain techniques for query rewriting and expansion in RAG. When can rewriting hurt retrieval quality?"
+  },
+  {
+    "id": "11",
+    "category": "RAG",
+    "topic": "Multi-hop Retrieval",
+    "difficulty": "Lead",
+    "text": "Design a multi-hop RAG pipeline capable of answering questions requiring reasoning across multiple documents."
+  },
+  {
+    "id": "12",
+    "category": "RAG",
+    "topic": "Evaluation",
+    "difficulty": "Senior",
+    "text": "How do you evaluate retrieval quality independently from generation quality in RAG?"
+  },
+
+  {
+    "id": "13",
+    "category": "Agents",
+    "topic": "Multi-Agent Systems",
+    "difficulty": "Lead",
+    "text": "Design a multi-agent system where agents collaborate to solve complex tasks. How do you manage coordination and conflicts?"
+  },
+  {
+    "id": "14",
+    "category": "Agents",
+    "topic": "Memory",
+    "difficulty": "Senior",
+    "text": "Compare short-term, long-term, episodic, and semantic memory in AI agents. When should each be used?"
+  },
+
+  {
+    "id": "15",
+    "category": "Architecture",
+    "topic": "Long Context Models",
+    "difficulty": "Lead",
+    "text": "How do long-context models handle quadratic attention complexity? Compare sliding window attention, sparse attention, and retrieval-based approaches."
+  },
+  {
+    "id": "16",
+    "category": "Architecture",
+    "topic": "Tokenization",
+    "difficulty": "Senior",
+    "text": "How does tokenization impact model performance and cost? Compare BPE, WordPiece, and SentencePiece."
+  },
+
+  {
+    "id": "17",
+    "category": "Production",
+    "topic": "Latency Optimization",
+    "difficulty": "Lead",
+    "text": "What strategies would you use to achieve sub-second latency for LLM applications at scale?"
+  },
+  {
+    "id": "18",
+    "category": "Production",
+    "topic": "Caching",
+    "difficulty": "Senior",
+    "text": "Explain different caching strategies in GenAI systems (embedding cache, prompt cache, response cache)."
+  },
+  {
+    "id": "19",
+    "category": "Production",
+    "topic": "Cost Optimization",
+    "difficulty": "Lead",
+    "text": "How would you reduce operational cost of a large-scale RAG application while maintaining accuracy?"
+  },
+
+  {
+    "id": "20",
+    "category": "Fine-Tuning",
+    "topic": "LoRA",
+    "difficulty": "Senior",
+    "text": "Explain how LoRA and QLoRA reduce memory requirements during fine-tuning. What are the trade-offs?"
+  },
+  {
+    "id": "21",
+    "category": "Fine-Tuning",
+    "topic": "Fine-Tuning vs RAG",
+    "difficulty": "Lead",
+    "text": "When would you choose fine-tuning over RAG? Provide a decision framework."
+  },
+
+  {
+    "id": "22",
+    "category": "Safety",
+    "topic": "Prompt Injection",
+    "difficulty": "Lead",
+    "text": "Design a defense strategy against prompt injection attacks in RAG systems."
+  },
+  {
+    "id": "23",
+    "category": "Safety",
+    "topic": "Guardrails",
+    "difficulty": "Senior",
+    "text": "How would you implement guardrails to ensure safe and compliant outputs in enterprise applications?"
+  },
+
+  {
+    "id": "24",
+    "category": "Evaluation",
+    "topic": "LLM Metrics",
+    "difficulty": "Senior",
+    "text": "What metrics would you use to evaluate LLM outputs beyond BLEU/ROUGE for real-world applications?"
+  },
+  {
+    "id": "25",
+    "category": "Evaluation",
+    "topic": "Human-in-the-Loop",
+    "difficulty": "Lead",
+    "text": "Design a human-in-the-loop feedback system for continuous improvement of an LLM application."
+  },
+
+  {
+    "id": "26",
+    "category": "RAG",
+    "topic": "Access Control",
+    "difficulty": "Lead",
+    "text": "How would you enforce document-level permissions in a RAG system for enterprise use?"
+  },
+  {
+    "id": "27",
+    "category": "RAG",
+    "topic": "Embedding Versioning",
+    "difficulty": "Senior",
+    "text": "How do you handle embedding versioning when documents change over time?"
+  },
+  {
+    "id": "28",
+    "category": "RAG",
+    "topic": "Re-ranking",
+    "difficulty": "Senior",
+    "text": "Explain how cross-encoder re-ranking improves retrieval quality compared to bi-encoder embeddings."
+  },
+  {
+    "id": "29",
+    "category": "RAG",
+    "topic": "Failure Detection",
+    "difficulty": "Lead",
+    "text": "Design a mechanism to detect when retrieval has failed and fallback strategies to recover."
+  },
+  {
+    "id": "30",
+    "category": "RAG",
+    "topic": "Contradictory Sources",
+    "difficulty": "Lead",
+    "text": "How should a RAG system handle contradictory information retrieved from multiple documents?"
+  },
+  {
+    "id": "938472615",
+    "category": "Prompting",
+    "topic": "Fundamentals",
+    "difficulty": "Senior",
+    "text": "What is prompt engineering and why is it critical for controlling LLM outputs?"
+  },
+  {
+    "id": "274619305",
+    "category": "Prompting",
+    "topic": "Zero vs Few Shot",
+    "difficulty": "Senior",
+    "text": "Compare zero-shot, one-shot, and few-shot prompting. When would you prefer each?"
+  },
+  {
+    "id": "615903842",
+    "category": "Prompting",
+    "topic": "Chain-of-Thought",
+    "difficulty": "Senior",
+    "text": "What is Chain-of-Thought prompting and how does it improve reasoning tasks?"
+  },
+  {
+    "id": "820374651",
+    "category": "Prompting",
+    "topic": "Advanced Prompting",
+    "difficulty": "Lead",
+    "text": "Compare Chain-of-Thought, Tree-of-Thought, and Self-Consistency prompting techniques."
+  },
+  {
+    "id": "496182735",
+    "category": "Prompting",
+    "topic": "Role Prompting",
+    "difficulty": "Senior",
+    "text": "How does role prompting influence model behavior?"
+  },
+
+  {
+    "id": "751904826",
+    "category": "Prompting",
+    "topic": "Structured Output",
+    "difficulty": "Senior",
+    "text": "How do you design prompts to ensure reliable JSON or schema-constrained output?"
+  },
+  {
+    "id": "309571864",
+    "category": "Prompting",
+    "topic": "Determinism",
+    "difficulty": "Senior",
+    "text": "How do temperature, top-k, and top-p parameters affect output determinism?"
+  },
+  {
+    "id": "682145903",
+    "category": "Prompting",
+    "topic": "Prompt Templates",
+    "difficulty": "Senior",
+    "text": "What are prompt templates and how do they improve consistency in applications?"
+  },
+
+  {
+    "id": "147593826",
+    "category": "Prompting",
+    "topic": "RAG Prompts",
+    "difficulty": "Lead",
+    "text": "How do prompts differ when used in Retrieval-Augmented Generation systems?"
+  },
+  {
+    "id": "560182947",
+    "category": "Prompting",
+    "topic": "Context Control",
+    "difficulty": "Lead",
+    "text": "How would you design prompts to ensure the model only uses provided context?"
+  },
+
+  {
+    "id": "824607193",
+    "category": "Prompting",
+    "topic": "Prompt Injection",
+    "difficulty": "Lead",
+    "text": "What techniques can mitigate prompt injection attacks?"
+  },
+  {
+    "id": "390175682",
+    "category": "Prompting",
+    "topic": "Guardrails",
+    "difficulty": "Senior",
+    "text": "How do you implement guardrails to enforce safe responses?"
+  },
+
+  {
+    "id": "975310468",
+    "category": "Prompting",
+    "topic": "Evaluation",
+    "difficulty": "Senior",
+    "text": "How do you evaluate the effectiveness of a prompt?"
+  },
+  {
+    "id": "168204759",
+    "category": "Prompting",
+    "topic": "Optimization",
+    "difficulty": "Lead",
+    "text": "Describe an iterative process for improving prompt performance in production."
+  },
+
+  {
+    "id": "703918265",
+    "category": "Prompting",
+    "topic": "Tool Use",
+    "difficulty": "Senior",
+    "text": "How do prompts enable tool calling or function calling in LLMs?"
+  },
+  {
+    "id": "541792603",
+    "category": "Prompting",
+    "topic": "Multi-step Reasoning",
+    "difficulty": "Lead",
+    "text": "How do you design prompts for complex multi-step reasoning tasks?"
+  },
+  {
+    "id": "921735640",
+    "category": "Python",
+    "topic": "Basics",
+    "difficulty": "Junior",
+    "text": "What are Python's key features and why is it popular for AI development?"
+  },
+  {
+    "id": "482910375",
+    "category": "Python",
+    "topic": "Data Types",
+    "difficulty": "Junior",
+    "text": "Explain mutable vs immutable types in Python with examples."
+  },
+  {
+    "id": "653820194",
+    "category": "Python",
+    "topic": "Functions",
+    "difficulty": "Junior",
+    "text": "What are *args and **kwargs? When should they be used?"
+  },
+
+  {
+    "id": "784201936",
+    "category": "Python",
+    "topic": "OOP",
+    "difficulty": "Senior",
+    "text": "Explain inheritance, polymorphism, encapsulation, and abstraction in Python."
+  },
+  {
+    "id": "310597842",
+    "category": "Python",
+    "topic": "OOP",
+    "difficulty": "Senior",
+    "text": "What is the difference between @staticmethod and @classmethod?"
+  },
+  {
+    "id": "529418607",
+    "category": "Python",
+    "topic": "Dataclasses",
+    "difficulty": "Senior",
+    "text": "What are dataclasses and how do they differ from normal classes?"
+  },
+
+  {
+    "id": "675219348",
+    "category": "Python",
+    "topic": "Decorators",
+    "difficulty": "Senior",
+    "text": "Explain how decorators work internally and provide a use case in APIs."
+  },
+  {
+    "id": "294816705",
+    "category": "Python",
+    "topic": "Generators",
+    "difficulty": "Senior",
+    "text": "What is the difference between generators and iterators?"
+  },
+  {
+    "id": "862104973",
+    "category": "Python",
+    "topic": "Context Managers",
+    "difficulty": "Senior",
+    "text": "How does the with statement work and how can you implement a custom context manager?"
+  },
+
+  {
+    "id": "147905382",
+    "category": "Python",
+    "topic": "Concurrency",
+    "difficulty": "Lead",
+    "text": "Compare multithreading, multiprocessing, and async IO in Python."
+  },
+  {
+    "id": "980213746",
+    "category": "Python",
+    "topic": "Async Programming",
+    "difficulty": "Senior",
+    "text": "Explain async/await and event loop in Python."
+  },
+  {
+    "id": "563720918",
+    "category": "Python",
+    "topic": "GIL",
+    "difficulty": "Lead",
+    "text": "What is the Global Interpreter Lock and how does it affect performance?"
+  },
+
+  {
+    "id": "406182735",
+    "category": "Python",
+    "topic": "Memory Management",
+    "difficulty": "Senior",
+    "text": "Explain Python memory management and garbage collection."
+  },
+  {
+    "id": "791023564",
+    "category": "Python",
+    "topic": "Performance",
+    "difficulty": "Lead",
+    "text": "How would you optimize Python code for performance-critical applications?"
+  },
+
+  {
+    "id": "238947561",
+    "category": "Python",
+    "topic": "Typing",
+    "difficulty": "Senior",
+    "text": "What are type hints and how do they improve code quality?"
+  },
+  {
+    "id": "675493120",
+    "category": "Python",
+    "topic": "Enums",
+    "difficulty": "Senior",
+    "text": "What is Enum and when should it be used?"
+  },
+
+  {
+    "id": "309847561",
+    "category": "Python",
+    "topic": "Modules",
+    "difficulty": "Junior",
+    "text": "Explain Python modules and packages."
+  },
+  {
+    "id": "548920173",
+    "category": "Python",
+    "topic": "Packaging",
+    "difficulty": "Senior",
+    "text": "How do you structure a large Python project?"
+  },
+
+  {
+    "id": "702194836",
+    "category": "Python",
+    "topic": "Testing",
+    "difficulty": "Senior",
+    "text": "Compare unittest and pytest frameworks."
+  },
+  {
+    "id": "615902734",
+    "category": "Python",
+    "topic": "Logging",
+    "difficulty": "Senior",
+    "text": "How do you implement structured logging in Python applications?"
+  },
+
+  {
+    "id": "891735204",
+    "category": "Python",
+    "topic": "FastAPI",
+    "difficulty": "Senior",
+    "text": "Explain dependency injection in FastAPI."
+  },
+  {
+    "id": "462918375",
+    "category": "Python",
+    "topic": "FastAPI",
+    "difficulty": "Lead",
+    "text": "How does FastAPI achieve high performance compared to Flask?"
+  },
+  {
+    "id": "503781926",
+    "category": "Python",
+    "topic": "Pydantic",
+    "difficulty": "Senior",
+    "text": "What is Pydantic and how does it validate data?"
+  },
+
+  {
+    "id": "749201635",
+    "category": "Python",
+    "topic": "Security",
+    "difficulty": "Lead",
+    "text": "What are common security vulnerabilities in Python applications and how do you prevent them?"
+  },
+  {
+    "id": "218745963",
+    "category": "Python",
+    "topic": "System Design",
+    "difficulty": "Lead",
+    "text": "Design a scalable Python backend for a high-traffic AI application."
+  },
+  {
+    "id": "731904826",
+    "category": "Agents",
+    "topic": "Fundamentals",
+    "difficulty": "Senior",
+    "text": "What is an AI agent and how does it differ from a traditional LLM pipeline?"
+  },
+  {
+    "id": "509182374",
+    "category": "Agents",
+    "topic": "Agent Types",
+    "difficulty": "Senior",
+    "text": "Compare reactive agents, deliberative agents, and hybrid agents."
+  },
+  {
+    "id": "846291735",
+    "category": "Agents",
+    "topic": "Planning",
+    "difficulty": "Lead",
+    "text": "How do planning-based agents differ from reactive agents?"
+  },
+
+  {
+    "id": "275903618",
+    "category": "Agents",
+    "topic": "ReAct Pattern",
+    "difficulty": "Senior",
+    "text": "Explain the ReAct (Reason + Act) framework for agent decision-making."
+  },
+  {
+    "id": "604918273",
+    "category": "Agents",
+    "topic": "Tool Use",
+    "difficulty": "Senior",
+    "text": "How does an agent decide when to call external tools?"
+  },
+  {
+    "id": "981735462",
+    "category": "Agents",
+    "topic": "Function Calling",
+    "difficulty": "Senior",
+    "text": "Explain how function calling enables structured tool usage in agents."
+  },
+
+  {
+    "id": "348920571",
+    "category": "Agents",
+    "topic": "Memory",
+    "difficulty": "Senior",
+    "text": "Compare short-term, long-term, episodic, and semantic memory in agents."
+  },
+  {
+    "id": "715203984",
+    "category": "Agents",
+    "topic": "Memory",
+    "difficulty": "Lead",
+    "text": "How would you design a long-term memory system for an autonomous agent?"
+  },
+
+  {
+    "id": "563918204",
+    "category": "Agents",
+    "topic": "Multi-Agent Systems",
+    "difficulty": "Lead",
+    "text": "When should you use a multi-agent system instead of a single agent?"
+  },
+  {
+    "id": "827401936",
+    "category": "Agents",
+    "topic": "Coordination",
+    "difficulty": "Lead",
+    "text": "How do agents coordinate tasks and resolve conflicts in multi-agent systems?"
+  },
+
+  {
+    "id": "192735048",
+    "category": "Agents",
+    "topic": "LangGraph",
+    "difficulty": "Senior",
+    "text": "How does LangGraph enable deterministic workflows for agents?"
+  },
+  {
+    "id": "605218739",
+    "category": "Agents",
+    "topic": "LangChain",
+    "difficulty": "Senior",
+    "text": "Explain the difference between chains and agents in LangChain."
+  },
+
+  {
+    "id": "734610982",
+    "category": "Agents",
+    "topic": "Error Handling",
+    "difficulty": "Lead",
+    "text": "How do you design agents to recover from tool failures or incorrect outputs?"
+  },
+  {
+    "id": "250719634",
+    "category": "Agents",
+    "topic": "Safety",
+    "difficulty": "Lead",
+    "text": "What safeguards are required to prevent autonomous agents from harmful actions?"
+  },
+
+  {
+    "id": "918273645",
+    "category": "Agents",
+    "topic": "Evaluation",
+    "difficulty": "Senior",
+    "text": "How do you evaluate the performance of an AI agent?"
+  },
+  {
+    "id": "407291635",
+    "category": "Agents",
+    "topic": "Observability",
+    "difficulty": "Lead",
+    "text": "What metrics and logs are essential for monitoring agents in production?"
+  },
+
+  {
+    "id": "682940175",
+    "category": "Agents",
+    "topic": "Autonomy",
+    "difficulty": "Lead",
+    "text": "How would you control the level of autonomy in enterprise agents?"
+  },
+  {
+    "id": "519203746",
+    "category": "Agents",
+    "topic": "Human-in-the-Loop",
+    "difficulty": "Senior",
+    "text": "When should a human be included in an agent workflow?"
+  },
+
+  {
+    "id": "390827461",
+    "category": "Agents",
+    "topic": "System Design",
+    "difficulty": "Lead",
+    "text": "Design an agent-based system for automated customer support."
+  },
+  {
+    "id": "762819530",
+    "category": "Agents",
+    "topic": "Enterprise",
+    "difficulty": "Lead",
+    "text": "How would you deploy agents securely in an enterprise environment?"
+  },
+  {
+    "id": "842910735",
+    "category": "LangChain",
+    "topic": "Fundamentals",
+    "difficulty": "Senior",
+    "text": "What problems does LangChain solve in LLM application development?"
+  },
+  {
+    "id": "195734820",
+    "category": "LangChain",
+    "topic": "Components",
+    "difficulty": "Senior",
+    "text": "Explain the core components of LangChain (LLMs, Prompts, Chains, Memory, Tools)."
+  },
+  {
+    "id": "603918274",
+    "category": "LangChain",
+    "topic": "Chains",
+    "difficulty": "Senior",
+    "text": "What is a chain and how does it differ from a simple API call to an LLM?"
+  },
+  {
+    "id": "729405183",
+    "category": "LangChain",
+    "topic": "Memory",
+    "difficulty": "Senior",
+    "text": "Explain different memory types in LangChain (Buffer, Summary, Vector Memory)."
+  },
+  {
+    "id": "516209384",
+    "category": "LangChain",
+    "topic": "Tools",
+    "difficulty": "Senior",
+    "text": "How are tools integrated into LangChain agents?"
+  },
+
+  {
+    "id": "384910572",
+    "category": "LangChain",
+    "topic": "Agents",
+    "difficulty": "Lead",
+    "text": "How do LangChain agents decide which tool to use?"
+  },
+  {
+    "id": "967120453",
+    "category": "LangChain",
+    "topic": "Retrievers",
+    "difficulty": "Senior",
+    "text": "Explain how retrievers work in LangChain and how they differ from vector stores."
+  },
+  {
+    "id": "208475913",
+    "category": "LangChain",
+    "topic": "RAG",
+    "difficulty": "Lead",
+    "text": "How does LangChain support building Retrieval-Augmented Generation pipelines?"
+  },
+
+  {
+    "id": "754190632",
+    "category": "LangGraph",
+    "topic": "Fundamentals",
+    "difficulty": "Senior",
+    "text": "What is LangGraph and how does it differ from LangChain agents?"
+  },
+  {
+    "id": "401928573",
+    "category": "LangGraph",
+    "topic": "State Management",
+    "difficulty": "Lead",
+    "text": "Explain how state is managed across nodes in LangGraph."
+  },
+  {
+    "id": "890172364",
+    "category": "LangGraph",
+    "topic": "Workflow Design",
+    "difficulty": "Lead",
+    "text": "How do you design deterministic workflows using LangGraph?"
+  },
+  {
+    "id": "612094875",
+    "category": "LangGraph",
+    "topic": "Nodes and Edges",
+    "difficulty": "Senior",
+    "text": "Explain nodes, edges, and conditional routing in LangGraph."
+  },
+
+  {
+    "id": "309571284",
+    "category": "LangGraph",
+    "topic": "Multi-Agent Workflows",
+    "difficulty": "Lead",
+    "text": "How does LangGraph enable multi-agent orchestration?"
+  },
+  {
+    "id": "718204639",
+    "category": "LangGraph",
+    "topic": "Error Handling",
+    "difficulty": "Lead",
+    "text": "How do you implement retries and failure handling in LangGraph workflows?"
+  },
+
+  {
+    "id": "580192736",
+    "category": "LangGraph",
+    "topic": "Human-in-the-Loop",
+    "difficulty": "Senior",
+    "text": "How does LangGraph support human intervention in workflows?"
+  },
+  {
+    "id": "267391805",
+    "category": "LangGraph",
+    "topic": "Persistence",
+    "difficulty": "Lead",
+    "text": "How do you persist state for long-running workflows?"
+  },
+
+  {
+    "id": "904718263",
+    "category": "LangChain",
+    "topic": "Performance",
+    "difficulty": "Lead",
+    "text": "What are the performance bottlenecks in LangChain applications and how do you optimize them?"
+  },
+  {
+    "id": "372819406",
+    "category": "LangGraph",
+    "topic": "Production",
+    "difficulty": "Lead",
+    "text": "How would you deploy a LangGraph-based system in production?"
+  },
+
+  {
+    "id": "615309742",
+    "category": "LangChain",
+    "topic": "Customization",
+    "difficulty": "Senior",
+    "text": "How can you build custom chains or components in LangChain?"
+  },
+  {
+    "id": "248971530",
+    "category": "LangGraph",
+    "topic": "System Design",
+    "difficulty": "Lead",
+    "text": "Design a complex agentic workflow using LangGraph for document intelligence."
+  },
+  {
+    "id": "918273640",
+    "category": "FastAPI",
+    "topic": "Fundamentals",
+    "difficulty": "Junior",
+    "text": "What is FastAPI and how does it differ from Flask and Django?"
+  },
+  {
+    "id": "507192834",
+    "category": "FastAPI",
+    "topic": "Routing",
+    "difficulty": "Junior",
+    "text": "Explain path parameters vs query parameters in FastAPI."
+  },
+  {
+    "id": "284910375",
+    "category": "FastAPI",
+    "topic": "Request Handling",
+    "difficulty": "Junior",
+    "text": "How does FastAPI automatically validate request data?"
+  },
+
+  {
+    "id": "640182937",
+    "category": "FastAPI",
+    "topic": "Pydantic",
+    "difficulty": "Senior",
+    "text": "What is Pydantic and how does FastAPI use it for data validation?"
+  },
+  {
+    "id": "195047362",
+    "category": "FastAPI",
+    "topic": "Dependency Injection",
+    "difficulty": "Senior",
+    "text": "Explain the dependency injection system in FastAPI."
+  },
+  {
+    "id": "731904582",
+    "category": "FastAPI",
+    "topic": "Middleware",
+    "difficulty": "Senior",
+    "text": "What is middleware in FastAPI and when should it be used?"
+  },
+
+  {
+    "id": "529178463",
+    "category": "FastAPI",
+    "topic": "Async Support",
+    "difficulty": "Senior",
+    "text": "How does FastAPI leverage async/await for high performance?"
+  },
+  {
+    "id": "864209371",
+    "category": "FastAPI",
+    "topic": "Concurrency",
+    "difficulty": "Lead",
+    "text": "How does FastAPI handle concurrent requests compared to traditional WSGI frameworks?"
+  },
+
+  {
+    "id": "317509284",
+    "category": "FastAPI",
+    "topic": "Security",
+    "difficulty": "Senior",
+    "text": "How do you implement authentication and authorization (JWT/OAuth2) in FastAPI?"
+  },
+  {
+    "id": "782046915",
+    "category": "FastAPI",
+    "topic": "CORS",
+    "difficulty": "Senior",
+    "text": "What is CORS and how do you configure it in FastAPI?"
+  },
+
+  {
+    "id": "604927381",
+    "category": "FastAPI",
+    "topic": "Background Tasks",
+    "difficulty": "Senior",
+    "text": "What are background tasks and when should they be used?"
+  },
+  {
+    "id": "258190736",
+    "category": "FastAPI",
+    "topic": "WebSockets",
+    "difficulty": "Senior",
+    "text": "How do you implement real-time communication using WebSockets in FastAPI?"
+  },
+
+  {
+    "id": "913580264",
+    "category": "FastAPI",
+    "topic": "Streaming",
+    "difficulty": "Lead",
+    "text": "How would you stream responses from an LLM API using FastAPI?"
+  },
+  {
+    "id": "467291805",
+    "category": "FastAPI",
+    "topic": "File Handling",
+    "difficulty": "Junior",
+    "text": "How do you handle file uploads in FastAPI?"
+  },
+
+  {
+    "id": "805731492",
+    "category": "FastAPI",
+    "topic": "Database Integration",
+    "difficulty": "Senior",
+    "text": "How do you integrate FastAPI with SQLAlchemy and async databases?"
+  },
+  {
+    "id": "279184603",
+    "category": "FastAPI",
+    "topic": "ORM",
+    "difficulty": "Senior",
+    "text": "Compare synchronous vs asynchronous database access in FastAPI."
+  },
+
+  {
+    "id": "134879520",
+    "category": "FastAPI",
+    "topic": "Testing",
+    "difficulty": "Senior",
+    "text": "How do you test FastAPI applications using pytest?"
+  },
+  {
+    "id": "602957183",
+    "category": "FastAPI",
+    "topic": "Logging",
+    "difficulty": "Senior",
+    "text": "How do you implement structured logging in FastAPI applications?"
+  },
+
+  {
+    "id": "748219503",
+    "category": "FastAPI",
+    "topic": "Deployment",
+    "difficulty": "Lead",
+    "text": "How do you deploy FastAPI applications in production using Docker and Kubernetes?"
+  },
+  {
+    "id": "392815704",
+    "category": "FastAPI",
+    "topic": "Performance",
+    "difficulty": "Lead",
+    "text": "What strategies improve FastAPI performance under high load?"
+  },
+
+  {
+    "id": "910248573",
+    "category": "FastAPI",
+    "topic": "System Design",
+    "difficulty": "Lead",
+    "text": "Design a scalable FastAPI backend for a GenAI application serving millions of requests."
+  },
+  {
+    "id": "581920374",
+    "category": "FastAPI",
+    "topic": "Observability",
+    "difficulty": "Lead",
+    "text": "What monitoring and tracing tools would you use for FastAPI in production?"
+  }
+]
