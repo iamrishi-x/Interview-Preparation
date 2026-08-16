@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAG Study Page | GenAI Interview Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/tokens.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <script defer src="../js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <div class="site-shell top-nav">
+        <a class="brand" href="../index.html"
+          >GenAI Studio
+          <small>Interview roadmap</small>
+        </a>
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open site navigation" data-nav-toggle>
+          Menu
+        </button>
+        <nav id="site-nav" class="nav-panel" aria-label="Primary" data-nav-panel>
+          <ul class="nav-list">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a aria-current="page" href="rag.html">RAG</a></li>
+            <li><a href="agentic-ai.html">Agentic AI</a></li>
+            <li><a href="mcp.html">MCP</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="site-shell site-main topic-layout">
+      <main id="main" data-on-this-page-source>
+        <p class="hero-line">Topic Deep Dive</p>
+        <h1>RAG: Retrieval-Augmented Generation</h1>
+        <p class="section-lead">
+          Covers roadmap sections on RAG fundamentals, chunking, advanced retrieval patterns, and evaluation.
+        </p>
+
+        <section class="topic-section" id="rag-architecture">
+          <h2>RAG Fundamentals and Architecture</h2>
+          <div class="flow">
+            <ol>
+              <li>Documents -> loader -> chunking -> embeddings -> vector DB</li>
+              <li>Retriever gathers relevant chunks</li>
+              <li>Context is grounded in prompt for LLM answer generation</li>
+            </ol>
+          </div>
+          <h3>What to Study</h3>
+          <ul class="checklist panel">
+            <li class="check-item"><input type="checkbox" data-check-id="rag-arch" /><span>RAG architecture components <code>rag-arch</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="rag-ingestion" /><span>Document ingestion and chunking flow <code>rag-ingestion</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="rag-context-construction" /><span>Context construction and grounding <code>rag-context-construction</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="rag-failure-modes" /><span>Common causes of poor answers <code>rag-failure-modes</code></span></li>
+          </ul>
+          <h3>Interview Questions</h3>
+          <ul class="question-list panel">
+            <li>What is RAG and why not send full documents directly to the model?</li>
+            <li>RAG vs fine-tuning: when do you pick each?</li>
+            <li>What are the major components that break in production RAG?</li>
+          </ul>
+        </section>
+
+        <section class="topic-section" id="chunking-embeddings">
+          <h2>Chunking and Embeddings</h2>
+          <h3>What to Study</h3>
+          <ul class="checklist panel">
+            <li class="check-item"><input type="checkbox" data-check-id="rag-chunk-fixed" /><span>Chunking styles: fixed, recursive, semantic, parent-child <code>rag-chunk-fixed</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="rag-chunk-overlap" /><span>Chunk overlap and its retrieval tradeoffs <code>rag-chunk-overlap</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="rag-embed-models" /><span>Embedding models: BGE, E5, OpenAI, Sentence Transformers <code>rag-embed-models</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="rag-similarity-metrics" /><span>Cosine vs dot product vs Euclidean distance <code>rag-similarity-metrics</code></span></li>
+          </ul>
+          <h3>Interview Questions</h3>
+          <ul class="question-list panel">
+            <li>How do you choose chunk size for legal docs vs source code?</li>
+            <li>Why can chunks that are too small or too large both degrade quality?</li>
+            <li>How do you choose an embedding model for a production domain?</li>
+          </ul>
+        </section>
+
+        <section class="topic-section" id="advanced-rag">
+          <h2>Advanced Retrieval and Reranking</h2>
+          <div class="flow">
+            <ol>
+              <li>Dense + sparse/hybrid retrieval for better candidate recall</li>
+              <li>Query rewriting/expansion/decomposition to improve intent match</li>
+              <li>Rerank top candidates (cross-encoder, relevance scoring)</li>
+              <li>Send only strongest grounded context to the LLM</li>
+            </ol>
+          </div>
+          <h3>What to Study</h3>
+          <ul class="checklist panel">
+            <li class="check-item"><input type="checkbox" data-check-id="rag-hybrid" /><span>Hybrid retrieval (dense + sparse/BM25) <code>rag-hybrid</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="rag-query-rewrite" /><span>Query rewriting and multi-query retrieval <code>rag-query-rewrite</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="rag-rerank" /><span>Reranking with cross-encoders <code>rag-rerank</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="rag-advanced-architectures" /><span>Graph/agentic/corrective/adaptive RAG patterns <code>rag-advanced-architectures</code></span></li>
+          </ul>
+          <h3>Interview Questions</h3>
+          <ul class="question-list panel">
+            <li>When is reranking mandatory instead of optional?</li>
+            <li>How does query rewriting improve retrieval recall in enterprise search?</li>
+            <li>How would you design a multi-hop RAG pipeline?</li>
+          </ul>
+        </section>
+
+        <section class="topic-section" id="rag-evaluation">
+          <h2>RAG Evaluation and Hallucination Control</h2>
+          <h3>What to Study</h3>
+          <ul class="checklist panel">
+            <li class="check-item"><input type="checkbox" data-check-id="rag-metrics-retrieval" /><span>Precision, Recall, Hit Rate, MRR, NDCG <code>rag-metrics-retrieval</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="rag-metrics-generation" /><span>Faithfulness, groundedness, answer relevance <code>rag-metrics-generation</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="rag-eval-dataset" /><span>Golden datasets and regression pipelines <code>rag-eval-dataset</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="rag-hallucination-mitigation" /><span>Grounding, citations, validation loops <code>rag-hallucination-mitigation</code></span></li>
+          </ul>
+          <h3>Interview Questions</h3>
+          <ul class="question-list panel">
+            <li>How do you detect hallucination in a production RAG app?</li>
+            <li>How do you compare two RAG implementations fairly?</li>
+            <li>What does a robust RAG evaluation dataset look like?</li>
+          </ul>
+        </section>
+      </main>
+
+      <aside class="topic-aside">
+        <section class="on-page">
+          <details open>
+            <summary>On this page</summary>
+            <nav aria-label="On this page" data-on-this-page></nav>
+          </details>
+        </section>
+        <section class="panel">
+          <h2>Progress Tools</h2>
+          <div class="progress-tools">
+            <button class="button button-secondary" type="button" data-export-progress>Export progress</button>
+            <button class="button button-secondary" type="button" data-import-progress>Import progress</button>
+            <input class="visually-hidden" type="file" accept="application/json" data-import-progress-input />
+          </div>
+          <p class="status-note" aria-live="polite" data-progress-status>Ready.</p>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-shell">RAG mastery is a core differentiator for your target interview band.</div>
+    </footer>
+  </body>
+</html>

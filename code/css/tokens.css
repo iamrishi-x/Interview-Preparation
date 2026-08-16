@@ -1,0 +1,38 @@
+:root {
+  --ink-950: #040b14;
+  --ink-900: #0a1422;
+  --ink-800: #132338;
+  --ink-700: #1f3653;
+  --slate-300: #9bb0cc;
+  --slate-100: #d5dfef;
+  --paper: #f5f9ff;
+  --accent-500: #00d4ff;
+  --accent-400: #48e4ff;
+  --accent-700: #0098b8;
+  --ok-500: #3bd17f;
+  --warn-500: #ffb84d;
+
+  --font-display: "Sora", "Avenir Next", "Segoe UI", sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "Consolas", monospace;
+
+  --size-1: 0.25rem;
+  --size-2: 0.5rem;
+  --size-3: 0.75rem;
+  --size-4: 1rem;
+  --size-5: 1.25rem;
+  --size-6: 1.5rem;
+  --size-8: 2rem;
+  --size-10: 2.5rem;
+  --size-12: 3rem;
+  --size-16: 4rem;
+
+  --radius-sm: 0.4rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-pill: 100vmax;
+
+  --shadow-soft: 0 8px 30px rgb(2 13 24 / 24%);
+  --focus-ring: 0 0 0 3px rgb(0 212 255 / 45%);
+  --max-reading: 72ch;
+}

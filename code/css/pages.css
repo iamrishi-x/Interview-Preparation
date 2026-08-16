@@ -1,0 +1,103 @@
+.hero {
+  display: grid;
+  gap: var(--size-6);
+  padding-top: var(--size-8);
+  animation: rise-in 350ms ease;
+}
+
+.hero h1 {
+  max-width: 18ch;
+}
+
+.hero p {
+  max-width: 62ch;
+}
+
+.hero-grid {
+  display: grid;
+  gap: var(--size-5);
+}
+
+.roadmap-grid {
+  display: grid;
+  gap: var(--size-5);
+}
+
+.topic-layout {
+  display: grid;
+  gap: var(--size-6);
+}
+
+.topic-layout main {
+  min-width: 0;
+}
+
+.topic-layout aside {
+  position: relative;
+}
+
+.topic-aside {
+  display: grid;
+  gap: var(--size-5);
+}
+
+.project-link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--size-2);
+}
+
+.project-link-list a {
+  display: block;
+  padding: var(--size-3);
+  border: 1px solid rgb(155 176 204 / 25%);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+
+.project-link-list a:hover {
+  border-color: rgb(0 212 255 / 40%);
+}
+
+.topic-section {
+  border-top: 1px solid rgb(155 176 204 / 18%);
+}
+
+.topic-meta {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  color: var(--accent-400);
+  letter-spacing: 0.08em;
+}
+
+@media (min-width: 640px) {
+  .roadmap-grid {
+    grid-template-columns: 1.3fr 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1.25fr 1fr;
+    align-items: start;
+  }
+
+  .topic-layout {
+    grid-template-columns: 1fr 280px;
+    gap: var(--size-8);
+  }
+
+  .topic-aside {
+    position: sticky;
+    top: 96px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-grid {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}

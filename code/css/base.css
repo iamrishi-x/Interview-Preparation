@@ -1,0 +1,136 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--slate-100);
+  background:
+    radial-gradient(circle at 0% 0%, rgb(0 212 255 / 12%), transparent 40%),
+    radial-gradient(circle at 100% 100%, rgb(31 54 83 / 40%), transparent 44%),
+    var(--ink-950);
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent-400);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--accent-500);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--size-4);
+  top: -120%;
+  background: var(--paper);
+  color: var(--ink-950);
+  padding: var(--size-3) var(--size-4);
+  border-radius: var(--radius-sm);
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: var(--size-4);
+}
+
+.site-shell {
+  width: min(1200px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  background: rgb(4 11 20 / 80%);
+  border-bottom: 1px solid rgb(155 176 204 / 22%);
+}
+
+.site-main {
+  padding-block: var(--size-8) var(--size-16);
+}
+
+.site-footer {
+  border-top: 1px solid rgb(155 176 204 / 20%);
+  padding: var(--size-8) 0;
+  color: var(--slate-300);
+  font-size: 0.95rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 var(--size-4);
+  font-family: var(--font-display);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 var(--size-4);
+}
+
+main p,
+main li {
+  max-width: var(--max-reading);
+}
+
+section {
+  padding-block: var(--size-8);
+}
+
+@media (min-width: 640px) {
+  .site-main {
+    padding-block: var(--size-10) var(--size-16);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

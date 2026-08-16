@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GenAI Interview Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <div class="site-shell top-nav">
+        <a class="brand" href="index.html"
+          >GenAI Studio
+          <small>Interview roadmap</small>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-controls="site-nav"
+          aria-expanded="false"
+          aria-label="Open site navigation"
+          data-nav-toggle
+        >
+          Menu
+        </button>
+        <nav id="site-nav" class="nav-panel" aria-label="Primary" data-nav-panel>
+          <ul class="nav-list">
+            <li><a aria-current="page" href="index.html">Home</a></li>
+            <li><a href="pages/roadmap.html">Roadmap</a></li>
+            <li><a href="pages/rag.html">RAG</a></li>
+            <li><a href="pages/agentic-ai.html">Agentic AI</a></li>
+            <li><a href="pages/mcp.html">MCP</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="site-main">
+      <div class="site-shell hero">
+        <p class="hero-line">Senior GenAI / Agentic AI interview prep</p>
+        <div class="hero-grid">
+          <section>
+            <h1>Build interview depth from fundamentals to signature stories.</h1>
+            <p>
+              This study site is mapped from your GenAI roadmap: LLM foundation, production RAG, agent systems, MCP,
+              and project-based architecture stories (Diesel Direct, FCC, Plexis).
+            </p>
+            <div class="cta-row">
+              <a class="button button-primary" href="pages/roadmap.html">Open Full Roadmap</a>
+              <a class="button button-secondary" href="pages/rag.html">Start with RAG</a>
+            </div>
+          </section>
+          <aside class="panel priority-rail" aria-label="Priority rail">
+            <div class="rail-step">
+              <h2>P0 Topics</h2>
+              <p>RAG architecture, Agentic AI, LangGraph, MCP, AI system design, Neo4j, and Python production depth.</p>
+            </div>
+            <div class="rail-step">
+              <h2>Study Sequence</h2>
+              <p>LLM Foundation -> RAG -> Agentic AI -> MCP -> AI Engineering -> System Design.</p>
+            </div>
+            <div class="rail-step">
+              <h2>Interview Edge</h2>
+              <p>Anchor all answers with your three signature stories and architecture tradeoff clarity.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <section class="site-shell">
+        <h2>Signature Project Stories</h2>
+        <p class="section-lead">
+          These stories should show applied architecture decisions, validation strategy, and production tradeoffs.
+        </p>
+        <ul class="project-link-list">
+          <li>
+            <a href="pages/roadmap.html#diesel-direct"
+              >Diesel Direct: .NET 4.8 -> .NET 10 modernization using Roslyn AST, Neo4j code graph, and MCP-enabled agents</a
+            >
+          </li>
+          <li>
+            <a href="pages/roadmap.html#fcc-project"
+              >FCC: production contract intelligence with document extraction, hybrid retrieval, query rewriting, and reranking</a
+            >
+          </li>
+          <li>
+            <a href="pages/roadmap.html#plexis-project"
+              >Plexis: Agentic RAG + SQL reasoning with auditable, validated responses</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section class="site-shell split">
+        <article class="panel">
+          <h2>Most Important 10 Topics</h2>
+          <ul>
+            <li>RAG Architecture and Advanced RAG</li>
+            <li>Agentic AI and LangGraph</li>
+            <li>MCP and tool security</li>
+            <li>Neo4j knowledge graphs</li>
+            <li>LLM evaluation and hallucination control</li>
+            <li>AI system design and production engineering</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h2>How to Use This Site</h2>
+          <ul>
+            <li>Use Roadmap page for full structure and P0 checklist.</li>
+            <li>Study RAG, Agentic AI, and MCP pages deeply for interviews.</li>
+            <li>Track progress via checkboxes, then export JSON snapshots.</li>
+            <li>Import snapshots to continue on another machine/browser.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-shell">Focused technical study experience using content from your GenAI Interview Roadmap.</div>
+    </footer>
+  </body>
+</html>

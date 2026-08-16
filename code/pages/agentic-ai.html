@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agentic AI Study Page | GenAI Interview Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/tokens.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <script defer src="../js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <div class="site-shell top-nav">
+        <a class="brand" href="../index.html"
+          >GenAI Studio
+          <small>Interview roadmap</small>
+        </a>
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open site navigation" data-nav-toggle>
+          Menu
+        </button>
+        <nav id="site-nav" class="nav-panel" aria-label="Primary" data-nav-panel>
+          <ul class="nav-list">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="rag.html">RAG</a></li>
+            <li><a aria-current="page" href="agentic-ai.html">Agentic AI</a></li>
+            <li><a href="mcp.html">MCP</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="site-shell site-main topic-layout">
+      <main id="main" data-on-this-page-source>
+        <p class="hero-line">Topic Deep Dive</p>
+        <h1>Agentic AI and Multi-Agent Systems</h1>
+        <p class="section-lead">
+          Focus areas from the roadmap: agent loops, tool orchestration, multi-agent tradeoffs, LangGraph, and memory.
+        </p>
+
+        <section class="topic-section" id="agent-core">
+          <h2>Core Agent Concepts</h2>
+          <div class="flow">
+            <ol>
+              <li>Goal -> Plan -> Tool selection -> Execute</li>
+              <li>Observe -> Reason -> Next action</li>
+              <li>Validation + retries -> final answer</li>
+            </ol>
+          </div>
+          <h3>What to Study</h3>
+          <ul class="checklist panel">
+            <li class="check-item"><input type="checkbox" data-check-id="agent-architecture" /><span>Agent architecture and feedback loop <code>agent-architecture</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="agent-planning" /><span>Planning and tool selection logic <code>agent-planning</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="agent-state" /><span>State management and validation paths <code>agent-state</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="agent-retries" /><span>Error handling and retry strategy <code>agent-retries</code></span></li>
+          </ul>
+          <h3>Interview Questions</h3>
+          <ul class="question-list panel">
+            <li>What separates a tool-calling chain from a true agent loop?</li>
+            <li>How do you prevent infinite or unproductive loops?</li>
+            <li>Where do you enforce human-in-the-loop approvals?</li>
+          </ul>
+        </section>
+
+        <section class="topic-section" id="multi-agent">
+          <h2>Single Agent vs Multi-Agent</h2>
+          <h3>What to Study</h3>
+          <ul class="checklist panel">
+            <li class="check-item"><input type="checkbox" data-check-id="agent-pattern-supervisor" /><span>Supervisor, router, planner/executor patterns <code>agent-pattern-supervisor</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="agent-pattern-parallel" /><span>Sequential vs parallel coordination models <code>agent-pattern-parallel</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="agent-coordination" /><span>Agent coordination and shared state boundaries <code>agent-coordination</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="agent-risk" /><span>Overhead and failure risks in multi-agent systems <code>agent-risk</code></span></li>
+          </ul>
+          <h3>Interview Questions</h3>
+          <ul class="question-list panel">
+            <li>When is a single agent enough?</li>
+            <li>What disadvantages appear when teams overuse multi-agent architectures?</li>
+            <li>How do you debug agent coordination failures in production?</li>
+          </ul>
+        </section>
+
+        <section class="topic-section" id="langgraph">
+          <h2>LangGraph for Controlled Agent Workflows</h2>
+          <div class="flow">
+            <ol>
+              <li>Model workflow as state + nodes + conditional edges</li>
+              <li>Add checkpoints, interrupts, and persistence</li>
+              <li>Support retries and human approvals on risk nodes</li>
+            </ol>
+          </div>
+          <h3>What to Study</h3>
+          <ul class="checklist panel">
+            <li class="check-item"><input type="checkbox" data-check-id="langgraph-state" /><span>State schema and edge transitions <code>langgraph-state</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="langgraph-conditional" /><span>Conditional routing and node specialization <code>langgraph-conditional</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="langgraph-persistence" /><span>Persistence, checkpoints, and interrupts <code>langgraph-persistence</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="langgraph-retry" /><span>Retry/failure handling and recursion control <code>langgraph-retry</code></span></li>
+          </ul>
+          <h3>Interview Questions</h3>
+          <ul class="question-list panel">
+            <li>Why choose LangGraph over a linear chain?</li>
+            <li>How do conditional edges map to business logic decisions?</li>
+            <li>How do you prevent recursive failure loops?</li>
+          </ul>
+        </section>
+
+        <section class="topic-section" id="agent-memory">
+          <h2>Agent Memory and Guardrails</h2>
+          <h3>What to Study</h3>
+          <ul class="checklist panel">
+            <li class="check-item"><input type="checkbox" data-check-id="memory-short-long" /><span>Short-term vs long-term memory boundaries <code>memory-short-long</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="memory-types" /><span>Semantic, episodic, summary, and vector memory <code>memory-types</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="memory-growth" /><span>Memory growth control and pruning strategy <code>memory-growth</code></span></li>
+            <li class="check-item"><input type="checkbox" data-check-id="memory-not-needed" /><span>Cases where memory should be disabled <code>memory-not-needed</code></span></li>
+          </ul>
+          <h3>Interview Questions</h3>
+          <ul class="question-list panel">
+            <li>How do you persist state without polluting future tasks?</li>
+            <li>When does memory hurt quality or safety?</li>
+            <li>How do you tie memory decisions to cost and latency constraints?</li>
+          </ul>
+        </section>
+      </main>
+
+      <aside class="topic-aside">
+        <section class="on-page">
+          <details open>
+            <summary>On this page</summary>
+            <nav aria-label="On this page" data-on-this-page></nav>
+          </details>
+        </section>
+        <section class="panel">
+          <h2>Progress Tools</h2>
+          <div class="progress-tools">
+            <button class="button button-secondary" type="button" data-export-progress>Export progress</button>
+            <button class="button button-secondary" type="button" data-import-progress>Import progress</button>
+            <input class="visually-hidden" type="file" accept="application/json" data-import-progress-input />
+          </div>
+          <p class="status-note" aria-live="polite" data-progress-status>Ready.</p>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-shell">Agentic AI interviews reward concrete control-flow and failure-handling explanations.</div>
+    </footer>
+  </body>
+</html>
