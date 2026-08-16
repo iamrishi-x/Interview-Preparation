@@ -52,17 +52,17 @@
 .project-link-list a {
   display: block;
   padding: var(--size-3);
-  border: 1px solid rgb(155 176 204 / 25%);
+  border: 1px solid var(--surface-border);
   border-radius: var(--radius-sm);
   text-decoration: none;
 }
 
 .project-link-list a:hover {
-  border-color: rgb(0 212 255 / 40%);
+  border-color: var(--accent-400);
 }
 
 .topic-section {
-  border-top: 1px solid rgb(155 176 204 / 18%);
+  border-top: 1px solid var(--surface-border);
 }
 
 .topic-meta {

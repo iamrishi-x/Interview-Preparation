@@ -14,11 +14,11 @@ body {
   min-height: 100vh;
   font-family: var(--font-body);
   line-height: 1.6;
-  color: var(--slate-100);
+  color: var(--text-primary);
   background:
-    radial-gradient(circle at 0% 0%, rgb(0 212 255 / 12%), transparent 40%),
-    radial-gradient(circle at 100% 100%, rgb(31 54 83 / 40%), transparent 44%),
-    var(--ink-950);
+    radial-gradient(circle at 0% 0%, var(--bg-grad-a), transparent 40%),
+    radial-gradient(circle at 100% 100%, var(--bg-grad-b), transparent 44%),
+    var(--bg-base);
 }
 
 img,
@@ -67,8 +67,8 @@ a:hover {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(12px);
-  background: rgb(4 11 20 / 80%);
-  border-bottom: 1px solid rgb(155 176 204 / 22%);
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--surface-border);
 }
 
 .site-main {
@@ -76,9 +76,9 @@ a:hover {
 }
 
 .site-footer {
-  border-top: 1px solid rgb(155 176 204 / 20%);
+  border-top: 1px solid var(--surface-border);
   padding: var(--size-8) 0;
-  color: var(--slate-300);
+  color: var(--text-muted);
   font-size: 0.95rem;
 }
 

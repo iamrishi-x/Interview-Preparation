@@ -11,6 +11,17 @@
   --accent-700: #0098b8;
   --ok-500: #3bd17f;
   --warn-500: #ffb84d;
+  --text-primary: #d5dfef;
+  --text-muted: #9bb0cc;
+  --bg-base: #040b14;
+  --bg-grad-a: rgb(0 212 255 / 12%);
+  --bg-grad-b: rgb(31 54 83 / 40%);
+  --header-bg: rgb(4 11 20 / 80%);
+  --surface-1: rgb(10 20 34 / 74%);
+  --surface-2: #0a1422;
+  --surface-border: rgb(155 176 204 / 28%);
+  --accent-soft: rgb(0 212 255 / 15%);
+  --focus-ring: 0 0 0 3px rgb(0 212 255 / 45%);
 
   --font-display: "Sora", "Avenir Next", "Segoe UI", sans-serif;
   --font-body: "Source Sans 3", "Segoe UI", sans-serif;
@@ -33,6 +44,20 @@
   --radius-pill: 100vmax;
 
   --shadow-soft: 0 8px 30px rgb(2 13 24 / 24%);
-  --focus-ring: 0 0 0 3px rgb(0 212 255 / 45%);
   --max-reading: 72ch;
+}
+
+:root[data-theme="light"] {
+  --text-primary: #12243a;
+  --text-muted: #37516f;
+  --paper: #071321;
+  --bg-base: #edf5ff;
+  --bg-grad-a: rgb(0 148 178 / 12%);
+  --bg-grad-b: rgb(95 127 170 / 20%);
+  --header-bg: rgb(237 245 255 / 88%);
+  --surface-1: rgb(255 255 255 / 86%);
+  --surface-2: #f7fbff;
+  --surface-border: rgb(55 81 111 / 26%);
+  --accent-soft: rgb(0 152 184 / 14%);
+  --shadow-soft: 0 8px 30px rgb(9 30 66 / 14%);
 }

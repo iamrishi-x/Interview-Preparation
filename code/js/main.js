@@ -1,6 +1,42 @@
 (function () {
   const STORAGE_KEY = "genai_prep_progress_v1";
+  const THEME_KEY = "genai_prep_theme";
   const EXPORT_VERSION = "1.0.0";
+
+  function getPreferredTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === "light" || saved === "dark") {
+      return saved;
+    }
+    return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem(THEME_KEY, theme);
+  }
+
+  function updateThemeToggleLabel(theme) {
+    const next = theme === "light" ? "dark" : "light";
+    document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
+      btn.textContent = next === "light" ? "Light" : "Dark";
+      btn.setAttribute("aria-label", `Switch to ${next} theme`);
+      btn.setAttribute("aria-pressed", String(theme === "light"));
+    });
+  }
+
+  function setupThemeToggle() {
+    const current = document.documentElement.getAttribute("data-theme") || "dark";
+    updateThemeToggleLabel(current);
+    document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const themeNow = document.documentElement.getAttribute("data-theme") || "dark";
+        const next = themeNow === "light" ? "dark" : "light";
+        applyTheme(next);
+        updateThemeToggleLabel(next);
+      });
+    });
+  }
 
   function safeParse(jsonText) {
     try {
@@ -208,7 +244,10 @@
     target.appendChild(list);
   }
 
+  applyTheme(getPreferredTheme());
+
   document.addEventListener("DOMContentLoaded", () => {
+    setupThemeToggle();
     setupNav();
     setupOnThisPage();
     applyChecklistState();
