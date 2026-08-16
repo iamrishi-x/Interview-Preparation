@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Topics | Interview OS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <script defer src="../js/main.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="sidebar-overlay" data-sidebar-overlay></div>
+<div class="app-shell">
+  <aside class="app-sidebar" aria-label="Primary">
+    <a class="brand" href="../index.html"><span class="brand-title">Interview OS</span><span class="brand-subtitle">GenAI Command Center</span></a>
+    <section class="nav-group"><h2 class="nav-label">Home</h2><ul class="nav-list"><li><a href="../index.html">Dashboard</a></li></ul></section>
+    <section class="nav-group"><h2 class="nav-label">Prepare</h2><ul class="nav-list"><li><a href="roadmap.html">Roadmap</a></li><li><a aria-current="page" href="topics.html">Topics</a></li><li><a href="questions.html">Questions</a></li><li><a href="flashcards.html">Flashcards</a></li></ul></section>
+    <section class="nav-group"><h2 class="nav-label">Practice</h2><ul class="nav-list"><li><a href="ai-interview.html">AI Interview</a></li><li><a href="mock-interview.html">Mock Interview</a></li><li><a href="coding.html">Coding</a></li></ul></section>
+    <section class="nav-group"><h2 class="nav-label">Analyze</h2><ul class="nav-list"><li><a href="progress.html">Progress</a></li><li><a href="weak-areas.html">Weak Areas</a></li><li><a href="performance.html">Performance</a></li></ul></section>
+    <section class="nav-group"><h2 class="nav-label">System</h2><ul class="nav-list"><li><a href="settings.html">Settings</a></li></ul></section>
+  </aside>
+
+  <main class="app-main" id="main">
+    <header class="topbar"><div class="page-container topbar-row"><div class="topbar-left"><button class="button button-ghost sidebar-toggle" type="button" data-sidebar-toggle>Menu</button><p class="topbar-title">Prepare · Topics catalog</p></div><div class="topbar-actions"><button class="button button-ghost" type="button" data-theme-toggle>Theme</button></div></div></header>
+
+    <div class="page-container" style="padding-block: var(--space-7);">
+      <header class="page-header"><p class="page-kicker">Prepare</p><h1>Topic catalog</h1><p class="page-lead">Organized by interview impact. Use study, practice, and interview modes for each topic.</p></header>
+
+      <section class="topic-catalog">
+        <article class="topic-card"><h2>RAG</h2><p class="status-note">Master retrieval design, evaluation, and mitigation of hallucinations.</p><div class="inline-meta"><span class="badge">Study depth: high</span><span class="badge badge-warning">Weak area</span></div><p style="margin-top:var(--space-4);"><a class="button button-secondary" href="rag.html">Open topic</a></p></article>
+        <article class="topic-card"><h2>Agentic AI</h2><p class="status-note">Focus on control flow, memory boundaries, and recovery patterns.</p><div class="inline-meta"><span class="badge">Practice recommended</span></div><p style="margin-top:var(--space-4);"><a class="button button-secondary" href="agentic-ai.html">Open topic</a></p></article>
+        <article class="topic-card"><h2>MCP</h2><p class="status-note">Cover architecture, secure tool invocation, and governance narrative.</p><div class="inline-meta"><span class="badge badge-warning">Needs reinforcement</span></div><p style="margin-top:var(--space-4);"><a class="button button-secondary" href="mcp.html">Open topic</a></p></article>
+        <article class="topic-card"><h2>Interview stories</h2><p class="status-note">Practice Diesel Direct, FCC, and Plexis with tradeoff-first framing.</p><div class="inline-meta"><span class="badge">Story depth</span></div><p style="margin-top:var(--space-4);"><a class="button button-secondary" href="roadmap.html#diesel-direct">Open stories</a></p></article>
+      </section>
+    </div>
+  </main>
+</div>
+</body>
+</html>

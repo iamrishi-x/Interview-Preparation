@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcards | Interview OS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <script defer src="../js/main.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="sidebar-overlay" data-sidebar-overlay></div>
+<div class="app-shell">
+  <aside class="app-sidebar" aria-label="Primary">
+    <a class="brand" href="../index.html"><span class="brand-title">Interview OS</span><span class="brand-subtitle">GenAI Command Center</span></a>
+    <section class="nav-group"><h2 class="nav-label">Home</h2><ul class="nav-list"><li><a href="../index.html">Dashboard</a></li></ul></section>
+    <section class="nav-group"><h2 class="nav-label">Prepare</h2><ul class="nav-list"><li><a href="roadmap.html">Roadmap</a></li><li><a href="topics.html">Topics</a></li><li><a href="questions.html">Questions</a></li><li><a aria-current="page" href="flashcards.html">Flashcards</a></li></ul></section>
+    <section class="nav-group"><h2 class="nav-label">Practice</h2><ul class="nav-list"><li><a href="ai-interview.html">AI Interview</a></li><li><a href="mock-interview.html">Mock Interview</a></li><li><a href="coding.html">Coding</a></li></ul></section>
+    <section class="nav-group"><h2 class="nav-label">Analyze</h2><ul class="nav-list"><li><a href="progress.html">Progress</a></li><li><a href="weak-areas.html">Weak Areas</a></li><li><a href="performance.html">Performance</a></li></ul></section>
+    <section class="nav-group"><h2 class="nav-label">System</h2><ul class="nav-list"><li><a href="settings.html">Settings</a></li></ul></section>
+  </aside>
+
+  <main class="app-main" id="main">
+    <header class="topbar"><div class="page-container topbar-row"><div class="topbar-left"><button class="button button-ghost sidebar-toggle" type="button" data-sidebar-toggle>Menu</button><p class="topbar-title">Prepare · Flashcard review</p></div><div class="topbar-actions"><button class="button button-ghost" type="button" data-theme-toggle>Theme</button></div></div></header>
+
+    <div class="page-container" style="padding-block: var(--space-7);">
+      <header class="page-header"><p class="page-kicker">Prepare</p><h1>Flashcards</h1><p class="page-lead">Fast recall mode for key interview definitions and tradeoff checkpoints.</p></header>
+
+      <section class="panel panel-raised">
+        <p class="badge">Card 8 / 40 · MCP</p>
+        <h2 style="margin-top: var(--space-4);">Front</h2>
+        <p>What is the core difference between MCP and direct in-app tool integrations?</p>
+        <button class="button button-primary" type="button" data-reveal-trigger="card-back" style="margin-top: var(--space-4);">Reveal back</button>
+        <article id="card-back" class="panel" hidden style="margin-top: var(--space-4);">
+          <h3>Back</h3>
+          <p>MCP externalizes tool/resource interfaces into a standard protocol, improving interoperability, governance, and modularity compared to ad-hoc direct integrations.</p>
+          <div class="topbar-actions" style="justify-content:flex-start; margin-top: var(--space-3);">
+            <button class="button button-secondary" type="button">Again</button>
+            <button class="button button-secondary" type="button">Hard</button>
+            <button class="button button-secondary" type="button">Good</button>
+            <button class="button button-secondary" type="button">Easy</button>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+</div>
+</body>
+</html>

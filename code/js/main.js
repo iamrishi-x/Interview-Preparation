@@ -30,11 +30,35 @@
     updateThemeToggleLabel(current);
     document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
       btn.addEventListener("click", () => {
-        const themeNow = document.documentElement.getAttribute("data-theme") || "dark";
-        const next = themeNow === "light" ? "dark" : "light";
+        const now = document.documentElement.getAttribute("data-theme") || "dark";
+        const next = now === "light" ? "dark" : "light";
         applyTheme(next);
         updateThemeToggleLabel(next);
       });
+    });
+  }
+
+  function setupSidebar() {
+    const toggles = document.querySelectorAll("[data-sidebar-toggle]");
+    const overlay = document.querySelector("[data-sidebar-overlay]");
+
+    const setOpen = (open) => {
+      document.body.setAttribute("data-sidebar-open", String(open));
+    };
+
+    toggles.forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const isOpen = document.body.getAttribute("data-sidebar-open") === "true";
+        setOpen(!isOpen);
+      });
+    });
+
+    if (overlay) {
+      overlay.addEventListener("click", () => setOpen(false));
+    }
+
+    document.querySelectorAll(".app-sidebar a").forEach((link) => {
+      link.addEventListener("click", () => setOpen(false));
     });
   }
 
@@ -119,6 +143,7 @@
     if (!btn) {
       return;
     }
+
     btn.addEventListener("click", () => {
       const state = readState();
       const payload = JSON.stringify(
@@ -197,29 +222,6 @@
     });
   }
 
-  function setupNav() {
-    const toggle = document.querySelector("[data-nav-toggle]");
-    const panel = document.querySelector("[data-nav-panel]");
-    if (!toggle || !panel) {
-      return;
-    }
-
-    const setOpen = (isOpen) => {
-      panel.setAttribute("data-open", String(isOpen));
-      toggle.setAttribute("aria-expanded", String(isOpen));
-    };
-
-    setOpen(false);
-    toggle.addEventListener("click", () => {
-      const isOpen = panel.getAttribute("data-open") === "true";
-      setOpen(!isOpen);
-    });
-
-    panel.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => setOpen(false));
-    });
-  }
-
   function setupOnThisPage() {
     const source = document.querySelector("[data-on-this-page-source]");
     const target = document.querySelector("[data-on-this-page]");
@@ -244,14 +246,65 @@
     target.appendChild(list);
   }
 
+  function setupTabPanels() {
+    const tabGroups = document.querySelectorAll("[data-tab-group]");
+    tabGroups.forEach((group) => {
+      const tabs = group.querySelectorAll("[data-tab-target]");
+      const panels = group.querySelectorAll("[data-tab-panel]");
+
+      const activate = (targetId) => {
+        tabs.forEach((tab) => {
+          tab.setAttribute("aria-selected", String(tab.getAttribute("data-tab-target") === targetId));
+        });
+        panels.forEach((panel) => {
+          panel.hidden = panel.getAttribute("data-tab-panel") !== targetId;
+        });
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const targetId = tab.getAttribute("data-tab-target");
+          if (targetId) {
+            activate(targetId);
+          }
+        });
+      });
+
+      const first = tabs[0]?.getAttribute("data-tab-target");
+      if (first) {
+        activate(first);
+      }
+    });
+  }
+
+  function setupRevealBlocks() {
+    document.querySelectorAll("[data-reveal-trigger]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-reveal-trigger");
+        if (!targetId) {
+          return;
+        }
+        const target = document.getElementById(targetId);
+        if (!target) {
+          return;
+        }
+        target.hidden = false;
+        btn.disabled = true;
+        btn.textContent = "Revealed";
+      });
+    });
+  }
+
   applyTheme(getPreferredTheme());
 
   document.addEventListener("DOMContentLoaded", () => {
     setupThemeToggle();
-    setupNav();
+    setupSidebar();
     setupOnThisPage();
     applyChecklistState();
     exportProgress();
     importProgress();
+    setupTabPanels();
+    setupRevealBlocks();
   });
 })();

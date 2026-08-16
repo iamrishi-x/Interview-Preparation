@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coding | Interview OS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <script defer src="../js/main.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="sidebar-overlay" data-sidebar-overlay></div>
+<div class="app-shell">
+  <aside class="app-sidebar" aria-label="Primary">
+    <a class="brand" href="../index.html"><span class="brand-title">Interview OS</span><span class="brand-subtitle">GenAI Command Center</span></a>
+    <section class="nav-group"><h2 class="nav-label">Home</h2><ul class="nav-list"><li><a href="../index.html">Dashboard</a></li></ul></section>
+    <section class="nav-group"><h2 class="nav-label">Prepare</h2><ul class="nav-list"><li><a href="roadmap.html">Roadmap</a></li><li><a href="topics.html">Topics</a></li><li><a href="questions.html">Questions</a></li><li><a href="flashcards.html">Flashcards</a></li></ul></section>
+    <section class="nav-group"><h2 class="nav-label">Practice</h2><ul class="nav-list"><li><a href="ai-interview.html">AI Interview</a></li><li><a href="mock-interview.html">Mock Interview</a></li><li><a aria-current="page" href="coding.html">Coding</a></li></ul></section>
+    <section class="nav-group"><h2 class="nav-label">Analyze</h2><ul class="nav-list"><li><a href="progress.html">Progress</a></li><li><a href="weak-areas.html">Weak Areas</a></li><li><a href="performance.html">Performance</a></li></ul></section>
+    <section class="nav-group"><h2 class="nav-label">System</h2><ul class="nav-list"><li><a href="settings.html">Settings</a></li></ul></section>
+  </aside>
+
+  <main class="app-main" id="main">
+    <header class="topbar"><div class="page-container topbar-row"><div class="topbar-left"><button class="button button-ghost sidebar-toggle" type="button" data-sidebar-toggle>Menu</button><p class="topbar-title">Practice · Coding</p></div><div class="topbar-actions"><button class="button button-ghost" type="button" data-theme-toggle>Theme</button></div></div></header>
+
+    <div class="page-container" style="padding-block: var(--space-7);">
+      <header class="page-header"><p class="page-kicker">Practice</p><h1>Coding practice workspace</h1><p class="page-lead">Problem, editor, and test panes are represented as static shells in this version.</p></header>
+      <section class="dashboard-grid"><article class="panel"><h2>Problem</h2><p>Implement a resilient retrieval pipeline with fallback reranking when primary index misses confidence thresholds.</p><ul class="question-list"><li>Input: user query + indexed chunks.</li><li>Output: ranked grounded context set.</li><li>Constraints: latency under 1 second.</li></ul></article><article class="panel"><h2>Editor / tests</h2><div class="skeleton" aria-hidden="true"></div><p class="status-note">Interactive coding runtime is not wired in this static app.</p></article></section>
+    </div>
+  </main>
+</div>
+</body>
+</html>

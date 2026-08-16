@@ -3,13 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MCP Study Page | GenAI Interview Studio</title>
+    <title>MCP | Interview OS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/tokens.css" />
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/components.css" />
@@ -18,129 +15,38 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
-    <header class="site-header">
-      <div class="site-shell top-nav">
-        <a class="brand" href="../index.html"
-          >GenAI Studio
-          <small>Interview roadmap</small>
-        </a>
-        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open site navigation" data-nav-toggle>
-          Menu
-        </button>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">Theme</button>
-        <nav id="site-nav" class="nav-panel" aria-label="Primary" data-nav-panel>
-          <ul class="nav-list">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="roadmap.html">Roadmap</a></li>
-            <li><a href="rag.html">RAG</a></li>
-            <li><a href="agentic-ai.html">Agentic AI</a></li>
-            <li><a aria-current="page" href="mcp.html">MCP</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <div class="site-shell site-main topic-layout">
-      <main id="main" data-on-this-page-source>
-        <p class="hero-line">Topic Deep Dive</p>
-        <h1>MCP: Model Context Protocol</h1>
-        <p class="section-lead">
-          High-priority topic for your profile. Focus on architecture, tool discovery, secure invocation, and project use.
-        </p>
-
-        <section class="topic-section" id="mcp-architecture">
-          <h2>MCP Architecture and Core Concepts</h2>
-          <div class="flow">
-            <ol>
-              <li>Agent uses MCP client to discover and invoke capabilities</li>
-              <li>MCP servers expose tools/resources/prompts over transport</li>
-              <li>Agent orchestrates results into grounded responses</li>
-            </ol>
-          </div>
-          <h3>What to Study</h3>
-          <ul class="checklist panel">
-            <li class="check-item"><input type="checkbox" data-check-id="mcp-core-what" /><span>What MCP solves vs direct integrations <code>mcp-core-what</code></span></li>
-            <li class="check-item"><input type="checkbox" data-check-id="mcp-client-server" /><span>Client/server responsibilities and transport <code>mcp-client-server</code></span></li>
-            <li class="check-item"><input type="checkbox" data-check-id="mcp-tool-model" /><span>Tool/resource/prompt model <code>mcp-tool-model</code></span></li>
-            <li class="check-item"><input type="checkbox" data-check-id="mcp-discovery" /><span>Tool discovery and invocation lifecycle <code>mcp-discovery</code></span></li>
-          </ul>
-          <h3>Interview Questions</h3>
-          <ul class="question-list panel">
-            <li>What problem does MCP solve for agent systems?</li>
-            <li>MCP vs direct tool integrations: tradeoffs and maintainability?</li>
-            <li>How does an agent discover and safely call tools?</li>
-          </ul>
-        </section>
-
-        <section class="topic-section" id="mcp-security">
-          <h2>MCP Security and Governance</h2>
-          <h3>What to Study</h3>
-          <ul class="checklist panel">
-            <li class="check-item"><input type="checkbox" data-check-id="mcp-authn-authz" /><span>Authentication, authorization, least privilege <code>mcp-authn-authz</code></span></li>
-            <li class="check-item"><input type="checkbox" data-check-id="mcp-permissions" /><span>Granular tool permissions and policy design <code>mcp-permissions</code></span></li>
-            <li class="check-item"><input type="checkbox" data-check-id="mcp-exfiltration" /><span>Data exfiltration and malicious tool defenses <code>mcp-exfiltration</code></span></li>
-            <li class="check-item"><input type="checkbox" data-check-id="mcp-audit" /><span>Telemetry/audit requirements for tool activity <code>mcp-audit</code></span></li>
-          </ul>
-          <h3>Interview Questions</h3>
-          <ul class="question-list panel">
-            <li>How do you secure MCP tools in enterprise systems?</li>
-            <li>How do you prevent over-permissioned agents?</li>
-            <li>What should be logged for MCP governance and compliance?</li>
-          </ul>
-        </section>
-
-        <section class="topic-section" id="mcp-ecosystem">
-          <h2>Your MCP Ecosystem</h2>
-          <p>From roadmap emphasis: Filesystem, Serena, Neo4j, Telemetry, Playwright, Sequential Thinking.</p>
-          <h3>What to Study</h3>
-          <ul class="checklist panel">
-            <li class="check-item"><input type="checkbox" data-check-id="mcp-filesystem" /><span>Filesystem MCP role in grounded code context <code>mcp-filesystem</code></span></li>
-            <li class="check-item"><input type="checkbox" data-check-id="mcp-neo4j" /><span>Neo4j MCP for graph context and dependency traversal <code>mcp-neo4j</code></span></li>
-            <li class="check-item"><input type="checkbox" data-check-id="mcp-playwright" /><span>Playwright MCP for browser automation validation <code>mcp-playwright</code></span></li>
-            <li class="check-item"><input type="checkbox" data-check-id="mcp-telemetry" /><span>Telemetry MCP for observability loops <code>mcp-telemetry</code></span></li>
-          </ul>
-          <h3>Interview Questions</h3>
-          <ul class="question-list panel">
-            <li>How did MCP fit into Diesel Direct architecture decisions?</li>
-            <li>Why use Neo4j MCP in AI modernization workflows?</li>
-            <li>Where did MCP materially improve reliability over ad-hoc tool wiring?</li>
-          </ul>
-        </section>
-
-        <section class="topic-section" id="mcp-project-story">
-          <h2>Project Story Framing for Interviews</h2>
-          <div class="flow">
-            <ol>
-              <li>Define problem: context-heavy enterprise migration</li>
-              <li>Explain why MCP was chosen for composable tool access</li>
-              <li>Show governance: permissioning, auth, auditing, retries</li>
-              <li>Demonstrate measurable outcome in build quality and speed</li>
-            </ol>
-          </div>
-        </section>
-      </main>
-
-      <aside class="topic-aside">
-        <section class="on-page">
-          <details open>
-            <summary>On this page</summary>
-            <nav aria-label="On this page" data-on-this-page></nav>
-          </details>
-        </section>
-        <section class="panel">
-          <h2>Progress Tools</h2>
-          <div class="progress-tools">
-            <button class="button button-secondary" type="button" data-export-progress>Export progress</button>
-            <button class="button button-secondary" type="button" data-import-progress>Import progress</button>
-            <input class="visually-hidden" type="file" accept="application/json" data-import-progress-input />
-          </div>
-          <p class="status-note" aria-live="polite" data-progress-status>Ready.</p>
-        </section>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+    <div class="app-shell">
+      <aside class="app-sidebar" aria-label="Primary">
+        <a class="brand" href="../index.html"><span class="brand-title">Interview OS</span><span class="brand-subtitle">GenAI Command Center</span></a>
+        <section class="nav-group"><h2 class="nav-label">Home</h2><ul class="nav-list"><li><a href="../index.html">Dashboard</a></li></ul></section>
+        <section class="nav-group"><h2 class="nav-label">Prepare</h2><ul class="nav-list"><li><a href="roadmap.html">Roadmap</a></li><li><a aria-current="page" href="topics.html">Topics</a></li><li><a href="questions.html">Questions</a></li><li><a href="flashcards.html">Flashcards</a></li></ul></section>
+        <section class="nav-group"><h2 class="nav-label">Practice</h2><ul class="nav-list"><li><a href="ai-interview.html">AI Interview</a></li><li><a href="mock-interview.html">Mock Interview</a></li><li><a href="coding.html">Coding</a></li></ul></section>
+        <section class="nav-group"><h2 class="nav-label">Analyze</h2><ul class="nav-list"><li><a href="progress.html">Progress</a></li><li><a href="weak-areas.html">Weak Areas</a></li><li><a href="performance.html">Performance</a></li></ul></section>
+        <section class="nav-group"><h2 class="nav-label">System</h2><ul class="nav-list"><li><a href="settings.html">Settings</a></li></ul></section>
       </aside>
-    </div>
 
-    <footer class="site-footer">
-      <div class="site-shell">MCP discussions should show architecture clarity and security depth, not tool buzzwords.</div>
-    </footer>
+      <main class="app-main" id="main">
+        <header class="topbar"><div class="page-container topbar-row"><div class="topbar-left"><button class="button button-ghost sidebar-toggle" type="button" data-sidebar-toggle>Menu</button><p class="topbar-title">Prepare · Topic detail</p></div><div class="topbar-actions"><a class="button button-secondary" href="questions.html">Practice Questions</a><button class="button button-ghost" type="button" data-theme-toggle>Theme</button></div></div></header>
+
+        <div class="page-container" style="padding-block: var(--space-7);">
+          <div class="topic-layout">
+            <main data-on-this-page-source>
+              <header class="page-header"><p class="page-kicker">Topic Deep Dive</p><h1>MCP: Model Context Protocol</h1><p class="page-lead">Explain architecture, secure tool invocation, and governance with clear production controls.</p></header>
+
+              <section id="mcp-architecture"><h2 id="mcp-architecture">MCP architecture and core concepts</h2><div class="flow"><ol><li>Agent discovers capabilities via MCP client</li><li>MCP servers expose tools/resources/prompts</li><li>Agent orchestrates and validates outputs</li></ol></div><ul class="checklist panel"><li class="check-item"><input type="checkbox" data-check-id="mcp-core-what" /><span>What MCP solves vs direct integrations <code>mcp-core-what</code></span></li><li class="check-item"><input type="checkbox" data-check-id="mcp-client-server" /><span>Client/server responsibilities <code>mcp-client-server</code></span></li><li class="check-item"><input type="checkbox" data-check-id="mcp-tool-model" /><span>Tool/resource/prompt model <code>mcp-tool-model</code></span></li><li class="check-item"><input type="checkbox" data-check-id="mcp-discovery" /><span>Discovery and invocation lifecycle <code>mcp-discovery</code></span></li></ul></section>
+
+              <section id="mcp-security"><h2 id="mcp-security">Security and governance</h2><ul class="checklist panel"><li class="check-item"><input type="checkbox" data-check-id="mcp-authn-authz" /><span>Authn/authz and least privilege <code>mcp-authn-authz</code></span></li><li class="check-item"><input type="checkbox" data-check-id="mcp-permissions" /><span>Granular tool permissioning <code>mcp-permissions</code></span></li><li class="check-item"><input type="checkbox" data-check-id="mcp-exfiltration" /><span>Exfiltration and malicious-tool defenses <code>mcp-exfiltration</code></span></li><li class="check-item"><input type="checkbox" data-check-id="mcp-audit" /><span>Audit and observability baselines <code>mcp-audit</code></span></li></ul></section>
+
+              <section id="mcp-ecosystem"><h2 id="mcp-ecosystem">Your MCP ecosystem</h2><ul class="checklist panel"><li class="check-item"><input type="checkbox" data-check-id="mcp-filesystem" /><span>Filesystem MCP context grounding <code>mcp-filesystem</code></span></li><li class="check-item"><input type="checkbox" data-check-id="mcp-neo4j" /><span>Neo4j MCP graph traversal use-cases <code>mcp-neo4j</code></span></li><li class="check-item"><input type="checkbox" data-check-id="mcp-playwright" /><span>Playwright MCP validation loops <code>mcp-playwright</code></span></li><li class="check-item"><input type="checkbox" data-check-id="mcp-telemetry" /><span>Telemetry MCP feedback loops <code>mcp-telemetry</code></span></li></ul></section>
+
+              <section id="mcp-project-story"><h2 id="mcp-project-story">Project story framing</h2><div class="flow"><ol><li>Define the context-heavy migration problem</li><li>Explain MCP adoption and design constraints</li><li>Show permissioning/auditing governance</li><li>Close with outcomes and tradeoffs</li></ol></div></section>
+            </main>
+
+            <aside class="topic-aside"><section class="on-page"><details open><summary>On this page</summary><nav aria-label="On this page" data-on-this-page></nav></details></section><section class="panel"><h2>Progress tools</h2><div class="topbar-actions" style="justify-content:flex-start;"><button class="button button-secondary" type="button" data-export-progress>Export</button><button class="button button-secondary" type="button" data-import-progress>Import</button><input class="visually-hidden" type="file" accept="application/json" data-import-progress-input /></div><p class="status-note" aria-live="polite" data-progress-status style="margin-top:var(--space-3);">Ready.</p></section></aside>
+          </div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>

@@ -3,13 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roadmap | GenAI Interview Studio</title>
+    <title>Roadmap | Interview OS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/tokens.css" />
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/components.css" />
@@ -18,138 +15,86 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
-    <header class="site-header">
-      <div class="site-shell top-nav">
-        <a class="brand" href="../index.html"
-          >GenAI Studio
-          <small>Interview roadmap</small>
-        </a>
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-controls="site-nav"
-          aria-expanded="false"
-          aria-label="Open site navigation"
-          data-nav-toggle
-        >
-          Menu
-        </button>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">Theme</button>
-        <nav id="site-nav" class="nav-panel" aria-label="Primary" data-nav-panel>
-          <ul class="nav-list">
-            <li><a href="../index.html">Home</a></li>
-            <li><a aria-current="page" href="roadmap.html">Roadmap</a></li>
-            <li><a href="rag.html">RAG</a></li>
-            <li><a href="agentic-ai.html">Agentic AI</a></li>
-            <li><a href="mcp.html">MCP</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+    <div class="app-shell">
+      <aside class="app-sidebar" aria-label="Primary">
+        <a class="brand" href="../index.html"><span class="brand-title">Interview OS</span><span class="brand-subtitle">GenAI Command Center</span></a>
+        <section class="nav-group"><h2 class="nav-label">Home</h2><ul class="nav-list"><li><a href="../index.html">Dashboard</a></li></ul></section>
+        <section class="nav-group"><h2 class="nav-label">Prepare</h2><ul class="nav-list"><li><a aria-current="page" href="roadmap.html">Roadmap</a></li><li><a href="topics.html">Topics</a></li><li><a href="questions.html">Questions</a></li><li><a href="flashcards.html">Flashcards</a></li></ul></section>
+        <section class="nav-group"><h2 class="nav-label">Practice</h2><ul class="nav-list"><li><a href="ai-interview.html">AI Interview</a></li><li><a href="mock-interview.html">Mock Interview</a></li><li><a href="coding.html">Coding</a></li></ul></section>
+        <section class="nav-group"><h2 class="nav-label">Analyze</h2><ul class="nav-list"><li><a href="progress.html">Progress</a></li><li><a href="weak-areas.html">Weak Areas</a></li><li><a href="performance.html">Performance</a></li></ul></section>
+        <section class="nav-group"><h2 class="nav-label">System</h2><ul class="nav-list"><li><a href="settings.html">Settings</a></li></ul></section>
+      </aside>
 
-    <main id="main" class="site-main">
-      <div class="site-shell">
-        <p class="hero-line">Overall map + P0 mastery queue</p>
-        <h1>Roadmap and Study Sequence</h1>
-        <p class="section-lead">
-          Goal: prepare for senior GenAI / AI Engineer roles through strong fundamentals, system architecture clarity, and
-          project-backed interview stories.
-        </p>
-      </div>
+      <main class="app-main" id="main">
+        <header class="topbar">
+          <div class="page-container topbar-row">
+            <div class="topbar-left">
+              <button class="button button-ghost sidebar-toggle" type="button" data-sidebar-toggle aria-label="Toggle sidebar">Menu</button>
+              <p class="topbar-title">Prepare · Roadmap progression</p>
+            </div>
+            <div class="topbar-actions">
+              <button class="button button-ghost" type="button" data-theme-toggle aria-label="Switch theme">Theme</button>
+            </div>
+          </div>
+        </header>
 
-      <section class="site-shell roadmap-grid">
-        <article class="panel priority-rail">
-          <div class="rail-step">
-            <h2>Phase 1: LLM Foundation</h2>
-            <p>Transformers, attention, tokens/context windows, embeddings, decoding.</p>
-          </div>
-          <div class="rail-step">
-            <h2>Phase 2-3: RAG and Agents</h2>
-            <p>RAG architecture, advanced retrieval, evaluation, tool calling, multi-agent design, LangGraph, memory.</p>
-          </div>
-          <div class="rail-step">
-            <h2>Phase 4-6: MCP and System Design</h2>
-            <p>MCP architecture/security, AI coding agents, Neo4j knowledge graphs, enterprise architecture patterns.</p>
-          </div>
-          <div class="rail-step">
-            <h2>Phase 7-10: Engineering to Interview</h2>
-            <p>Python/FastAPI/PostgreSQL/Azure, security, observability, project deep dives, behavioral stories.</p>
-          </div>
-        </article>
+        <div class="page-container" style="padding-block: var(--space-7);">
+          <header class="page-header">
+            <p class="page-kicker">Prepare</p>
+            <h1>Roadmap and study sequence</h1>
+            <p class="page-lead">Move through core depth first: foundation, RAG, agents, MCP, production engineering, and interview story packaging.</p>
+          </header>
 
-        <aside class="panel">
-          <h2>Progress Tools</h2>
-          <div class="progress-tools">
-            <button class="button button-secondary" type="button" data-export-progress>Export progress</button>
-            <button class="button button-secondary" type="button" data-import-progress>Import progress</button>
-            <input class="visually-hidden" type="file" accept="application/json" data-import-progress-input />
-          </div>
-          <p class="status-note" aria-live="polite" data-progress-status>Ready.</p>
-        </aside>
-      </section>
+          <section class="dashboard-grid">
+            <article class="panel">
+              <h2>Phased roadmap</h2>
+              <ol class="timeline">
+                <li><h3>Phase 1: LLM foundation</h3><p class="status-note">Transformers, attention, context windows, embeddings, decoding.</p></li>
+                <li><h3>Phase 2-3: RAG + agents</h3><p class="status-note">Retrieval architecture, evaluation loops, multi-agent control flow.</p></li>
+                <li><h3>Phase 4-6: MCP + system design</h3><p class="status-note">MCP architecture/security, tool governance, enterprise architecture.</p></li>
+                <li><h3>Phase 7-10: production + interview</h3><p class="status-note">Engineering depth and story framing for interview delivery.</p></li>
+              </ol>
+            </article>
 
-      <section class="site-shell">
-        <h2>P0 Highest Priority Checklist</h2>
-        <p class="section-lead">Master these first before broad interview practice.</p>
-        <ul class="checklist panel">
-          <li class="check-item"><input type="checkbox" data-check-id="p0-llm-fund" /><span>LLM Fundamentals <code>p0-llm-fund</code></span></li>
-          <li class="check-item"><input type="checkbox" data-check-id="p0-transformers" /><span>Transformers and Attention <code>p0-transformers</code></span></li>
-          <li class="check-item"><input type="checkbox" data-check-id="p0-tokens" /><span>Tokens and Context Windows <code>p0-tokens</code></span></li>
-          <li class="check-item"><input type="checkbox" data-check-id="p0-rag-fund" /><span>RAG Fundamentals <code>p0-rag-fund</code></span></li>
-          <li class="check-item"><input type="checkbox" data-check-id="p0-advanced-rag" /><span>Advanced RAG + Evaluation <code>p0-advanced-rag</code></span></li>
-          <li class="check-item"><input type="checkbox" data-check-id="p0-agentic" /><span>Agentic AI + Multi-Agent + LangGraph <code>p0-agentic</code></span></li>
-          <li class="check-item"><input type="checkbox" data-check-id="p0-mcp" /><span>MCP and Tool Security <code>p0-mcp</code></span></li>
-          <li class="check-item"><input type="checkbox" data-check-id="p0-neo4j" /><span>Neo4j / Knowledge Graphs <code>p0-neo4j</code></span></li>
-          <li class="check-item"><input type="checkbox" data-check-id="p0-system-design" /><span>AI System Design <code>p0-system-design</code></span></li>
-          <li class="check-item"><input type="checkbox" data-check-id="p0-python" /><span>Python + Production Engineering <code>p0-python</code></span></li>
-          <li class="check-item"><input type="checkbox" data-check-id="p0-diesel" /><span>Diesel Direct architecture story <code>p0-diesel</code></span></li>
-          <li class="check-item"><input type="checkbox" data-check-id="p0-fcc" /><span>FCC architecture story <code>p0-fcc</code></span></li>
-        </ul>
-      </section>
+            <aside class="panel">
+              <h2>Progress tools</h2>
+              <p class="status-note">Use JSON export/import to move progress state between browsers.</p>
+              <div class="topbar-actions" style="justify-content: flex-start; margin-top: var(--space-4);">
+                <button class="button button-secondary" type="button" data-export-progress>Export progress</button>
+                <button class="button button-secondary" type="button" data-import-progress>Import progress</button>
+                <input class="visually-hidden" type="file" accept="application/json" data-import-progress-input />
+              </div>
+              <p class="status-note" aria-live="polite" data-progress-status style="margin-top: var(--space-3);">Ready.</p>
+            </aside>
+          </section>
 
-      <section class="site-shell" id="diesel-direct">
-        <h2>Story 1: Diesel Direct</h2>
-        <p class="topic-meta">AI-powered software modernization</p>
-        <div class="flow">
-          <ol>
-            <li>.NET 4.8 source inventory with Roslyn parser and AST extraction</li>
-            <li>Neo4j code graph for dependencies and migration planning</li>
-            <li>Multi-agent architecture with MCP-based tool integration</li>
-            <li>.NET 10 + React generation with validation and build/test gates</li>
-            <li>Azure deployment and migration quality metrics</li>
-          </ol>
+          <section>
+            <h2>P0 highest-priority checklist</h2>
+            <ul class="checklist panel">
+              <li class="check-item"><input type="checkbox" data-check-id="p0-llm-fund" /><span>LLM fundamentals <code>p0-llm-fund</code></span></li>
+              <li class="check-item"><input type="checkbox" data-check-id="p0-transformers" /><span>Transformers and attention <code>p0-transformers</code></span></li>
+              <li class="check-item"><input type="checkbox" data-check-id="p0-rag-fund" /><span>RAG fundamentals <code>p0-rag-fund</code></span></li>
+              <li class="check-item"><input type="checkbox" data-check-id="p0-advanced-rag" /><span>Advanced RAG and evaluation <code>p0-advanced-rag</code></span></li>
+              <li class="check-item"><input type="checkbox" data-check-id="p0-agentic" /><span>Agentic AI + LangGraph <code>p0-agentic</code></span></li>
+              <li class="check-item"><input type="checkbox" data-check-id="p0-mcp" /><span>MCP and tool security <code>p0-mcp</code></span></li>
+              <li class="check-item"><input type="checkbox" data-check-id="p0-system-design" /><span>AI system design <code>p0-system-design</code></span></li>
+              <li class="check-item"><input type="checkbox" data-check-id="p0-python" /><span>Python production depth <code>p0-python</code></span></li>
+              <li class="check-item"><input type="checkbox" data-check-id="p0-diesel" /><span>Diesel Direct architecture story <code>p0-diesel</code></span></li>
+              <li class="check-item"><input type="checkbox" data-check-id="p0-fcc" /><span>FCC architecture story <code>p0-fcc</code></span></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Signature project stories</h2>
+            <ul class="story-list">
+              <li class="story-item" id="diesel-direct"><h3>Diesel Direct</h3><p class="status-note">Roslyn + Neo4j + MCP agents for .NET modernization and governed migration.</p></li>
+              <li class="story-item" id="fcc-project"><h3>FCC</h3><p class="status-note">Production contract intelligence with hybrid retrieval, rewriting, reranking.</p></li>
+              <li class="story-item" id="plexis-project"><h3>Plexis</h3><p class="status-note">Agentic RAG + SQL reasoning with validated and auditable output paths.</p></li>
+            </ul>
+          </section>
         </div>
-      </section>
-
-      <section class="site-shell" id="fcc-project">
-        <h2>Story 2: FCC</h2>
-        <p class="topic-meta">Production contract intelligence RAG</p>
-        <div class="flow">
-          <ol>
-            <li>Contract ingestion via document intelligence and field extraction</li>
-            <li>Embeddings + hybrid retrieval + query rewriting + reranking</li>
-            <li>LLM answer stage with memory and evaluation loops</li>
-            <li>Cost and quality tracking for production reliability</li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="site-shell" id="plexis-project">
-        <h2>Story 3: Plexis</h2>
-        <p class="topic-meta">Agentic RAG + SQL with auditable outputs</p>
-        <div class="flow">
-          <ol>
-            <li>Agent routes user query across RAG and SQL paths</li>
-            <li>Hybrid retrieval + validated text-to-SQL generation</li>
-            <li>Multi-hop reasoning over PostgreSQL with safeguards</li>
-            <li>Auditable answer with traceable retrieval and query path</li>
-          </ol>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="site-shell">Use this page as your operating dashboard before interview rounds.</div>
-    </footer>
+      </main>
+    </div>
   </body>
 </html>
